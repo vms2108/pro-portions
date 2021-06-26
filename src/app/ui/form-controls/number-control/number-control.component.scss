@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  height: 50px;
+  overflow: hidden;
+
+  &.has-error {
+    height: 70px;
+  }
+}
+
+.incorrect-format {
+  position: relative;
+  top: -15px;
+}

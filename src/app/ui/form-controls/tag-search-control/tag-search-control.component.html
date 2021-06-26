@@ -1,0 +1,19 @@
+<div
+  class="field">
+  <tag-input [formControl]="control"
+              [placeholder]="'Search a new item'"
+              [secondaryPlaceholder]="'Search a new item'"
+              [onTextChangeDebounce]="100"
+              [maxItems]="maxItems"
+              [onlyFromAutocomplete]="true">
+      <tag-input-dropdown
+              [showDropdownIfEmpty]="true"
+              [keepOpen]="false"
+              [focusFirstElement]="true"
+              [autocompleteItems]="items">
+          <ng-template let-item="item" let-index="index">
+              {{ item.value }}
+          </ng-template>
+      </tag-input-dropdown>
+  </tag-input>
+</div>

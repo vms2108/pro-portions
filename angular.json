@@ -30,7 +30,10 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "lodash"
+            ]
           },
           "configurations": {
             "production": {
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pro-portions"
+    }
+  },
+  "defaultProject": "pro-portions",
+  "cli": {
+    "analytics": "700dacfa-10ea-446a-a69f-d17b0be9c7df"
+  }
 }

@@ -1,0 +1,7 @@
+{
+  "/api/gateway/offerservice/**": {
+    "target": "https://test-offer-service-ng.intellectokids-services.com/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

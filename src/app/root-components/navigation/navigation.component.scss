@@ -1,0 +1,117 @@
+@import 'src/app/ui/styles/colors';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 44px;
+  overflow: hidden;
+  transition: width 0.5s;
+  padding-top: 15px;
+  background: $light-menu-bg;
+  font-size: 14px;
+  color: $text-color;
+
+  &__item {
+    position: relative;
+    width: 100%;
+  }
+
+  &__btn {
+    display: block;
+    text-align: left;
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
+    color: $text-color;
+
+    .inserted {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      border: 5px solid transparent;
+      border-top: 5px solid $text-color;
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        bottom: 1px;
+        width: 3px;
+        background: $green-color;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $green-color;
+
+      .inserted {
+        border-top-color: $green-color;
+      }
+    }
+
+    .mat-icon {
+      font-size: 16px;
+      line-height: 28px;
+      display: inline;
+      vertical-align: middle;
+    }
+
+    .title {
+      display: inline;
+      vertical-align: middle;
+      opacity: 0;
+      margin-left: 10px;
+      line-height: 18px;
+      transition: opacity 0.5s;
+      white-space: nowrap;
+    }
+  }
+
+  &.opened {
+    width: 200px;
+
+    .mat-icon {
+      margin-left: 0;
+    }
+
+    .title {
+      opacity: 1;
+    }
+  }
+}
+
+.submenu {
+  display: none;
+  padding: 10px 0 15px 40px;
+  color: $text-color;
+
+  &__btn {
+    &.active {
+      font-weight: bold;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $orange-color;
+    }
+  }
+}
+
+.menu__item.opened {
+  background: $menu-bg;
+
+  .menu__btn .inserted {
+    transform: rotate(180deg);
+    top: 5px;
+  }
+
+  .submenu {
+    display: block;
+  }
+}

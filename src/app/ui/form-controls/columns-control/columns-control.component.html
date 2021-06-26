@@ -1,0 +1,14 @@
+<app-vertical-form-field class="field">
+  <app-form-field-label
+    label="Columns"
+  ></app-form-field-label>
+  <ng-container appFormFieldControl>
+    <app-select-search-control
+      [formControl]="control"
+      [items]="labels"
+      [width]="220"
+      [multiple]="true"
+    >
+    </app-select-search-control>
+  </ng-container>
+</app-vertical-form-field>

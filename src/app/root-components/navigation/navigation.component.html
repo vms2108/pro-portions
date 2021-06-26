@@ -1,0 +1,57 @@
+<ul class="menu" [class.opened]="menuOpened">
+  <li class="menu__item">
+    <button 
+      class="menu__btn"
+      routerLink="news"
+      routerLinkActive="active"
+    >
+      <mat-icon>list_alt</mat-icon>
+      <span class="title">Новости</span>
+    </button>
+  </li>
+  
+  <li class="menu__item">
+    <button 
+      class="menu__btn"
+      routerLink="ab/abtest"
+      [class.active] = "page === PAGES.AB"
+    >
+      <mat-icon>call_split</mat-icon>
+      <span class="title">AB тесты</span>
+    </button>
+  </li>
+
+  <li class="menu__item">
+    <button 
+      class="menu__btn"
+      routerLink="classroom"
+      [class.active] = "page === PAGES.CLASSROOM"
+    >
+      <mat-icon>school</mat-icon>
+      <span class="title">Classroom</span>
+    </button>
+  </li>
+
+  <li class="menu__item">
+    <button 
+      class="menu__btn"
+      routerLink="localization"
+      routerLinkActive="active"
+    >
+      <mat-icon>settings_applications</mat-icon>
+      <span class="title">Локализация</span>
+    </button>
+  </li>
+
+  <li class="menu__item">
+    <button 
+      class="menu__btn"
+      routerLink="offer/offer"
+      [class.active] = "page === PAGES.OFFERSERVICE"
+    >
+      <mat-icon>production_quantity_limits</mat-icon>
+      <span class="title">Offer</span>
+    </button>
+  </li>
+
+</ul>

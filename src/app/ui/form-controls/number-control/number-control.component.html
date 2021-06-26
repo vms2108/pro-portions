@@ -1,0 +1,16 @@
+<div>
+  <input
+    class="app-input"
+    (keydown)="filterInput($event)"
+    (input)="checkPastedValue($event)"
+    [formControl]="control"
+    autocomplete="off"
+  >
+</div>
+
+<app-control-error
+  *ngIf="isIncorrectFormat"
+  class="incorrect-format"
+>
+  Некорректный формат.
+</app-control-error>

@@ -1,0 +1,23 @@
+<app-dialog-container-basic dialogTitle="Подтвердите действие">
+
+  <ng-template #contentSection>
+    <div class="description">
+      {{ actionDescription }}
+    </div>
+  </ng-template>
+
+  <ng-template #actionButton>
+    <button
+      class="app-btn app-btn--white"
+      [mat-dialog-close]="false"
+    >Отмена</button>
+  </ng-template>
+
+  <ng-template #actionButton>
+    <button
+      class="app-btn"
+      [mat-dialog-close]="true"
+    >Подтвердить</button>
+  </ng-template>
+
+</app-dialog-container-basic>

@@ -1,0 +1,51 @@
+<form class="form" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+  <h2 class="form__title">Вход</h2>
+  <app-vertical-form-field>
+    <app-form-field-label label="Логин" [required]="true"></app-form-field-label>
+    <ng-container appFormFieldControl>
+      <app-text-control formControlName="login" [maxLength]="LOGIN_MAX_LENGTH"></app-text-control>
+    </ng-container>
+    <ng-container appFormFieldErrors>
+      <app-control-error *ngIf="hasErrorInCommonDataForm('login', 'required')">
+        Логин обязателен для заполнения.
+      </app-control-error>
+      <app-control-error *ngIf="hasErrorInCommonDataForm('login', 'minlength') || hasErrorInCommonDataForm('login', 'maxlength')">
+        Длина логина должна быть в диапазоне [{{ LOGIN_MIN_LENGTH }}, {{ LOGIN_MAX_LENGTH }}].
+      </app-control-error>
+    </ng-container>
+  </app-vertical-form-field>
+
+  <app-vertical-form-field>
+    <app-form-field-label label="Пароль" [required]="true"></app-form-field-label>
+    <ng-container appFormFieldControl>
+      <app-password-control formControlName="password"></app-password-control>
+    </ng-container>
+    <ng-container appFormFieldErrors>
+      <app-control-error *ngIf="hasErrorInCommonDataForm('password', 'required')">
+        Пароль обязателен для заполнения.
+      </app-control-error>
+    </ng-container>
+  </app-vertical-form-field>
+
+  <ng-container *ngIf="needNewPassword">
+    <h3>Введите новый пароль</h3>
+    <app-vertical-form-field>
+      <app-form-field-label label="Новый пароль" [required]="true"></app-form-field-label>
+      <ng-container appFormFieldControl>
+        <app-password-control formControlName="newPassword"></app-password-control>
+      </ng-container>
+      <ng-container appFormFieldErrors>
+        <app-control-error *ngIf="!passwordComplexity">
+          Пароль должен включать одну заглавную, одну строчную букву, одну цифру, один спецсимвол, а также иметь длину от 6 до 99 символов.
+        </app-control-error>
+      </ng-container>
+    </app-vertical-form-field>
+  </ng-container>
+  
+  <button
+    class="app-btn"
+    type="submit"
+    [disabled]="formDisabled()"
+  >Войти</button>
+
+</form>

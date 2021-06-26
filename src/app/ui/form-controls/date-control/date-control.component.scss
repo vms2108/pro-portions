@@ -1,0 +1,21 @@
+.date-input {
+  width: 80%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  box-sizing: border-box;
+}

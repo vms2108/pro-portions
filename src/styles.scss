@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'styles/material/material-theme';
+@import 'styles/material/material-theme';
+@import 'styles/angular-split/angular-split';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Roboto, "Segoe UI", "Segoe UI Web (West European)", "Helvetica Neue", sans-serif;
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.mat-icon {
+  font-size: 19px;
+}
+
+.mat-option-text {
+  max-width: 600px;
+}

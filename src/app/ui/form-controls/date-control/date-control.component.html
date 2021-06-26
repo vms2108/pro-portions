@@ -1,0 +1,18 @@
+<mat-form-field>
+  <mat-label>{{ label }}</mat-label>
+  <div class="container">
+    <input
+      matInput
+      class="app-input date-input hidden"
+      [matDatepicker]="date"
+      [formControl]="control"
+      [min]="minDate"
+      [max]="maxDate"
+      autocomplete="off"
+    >
+    <input #input class="app-input date-input" [textMask]="mask" (input)="valuechange($event.target.value)">
+    <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+    <mat-datepicker #date></mat-datepicker>
+  </div>
+</mat-form-field>
+
